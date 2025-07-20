@@ -1,39 +1,39 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import ItemList from "../ItemList/ItemList";
 
-
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { categoriaId } = useParams();
 
   useEffect(() => {
-    const productosRef = collection(db, "productos");
+    const librosRef = collection(db, "libros"); // Cambiado de "productos" a "libros"
 
-    getDocs(productosRef)
-      .then((snapshot) => {
-        const items = snapshot.docs.map((doc) => ({
+    const q = categoriaId
+      ? query(librosRef, where("category", "==", categoriaId))
+      : librosRef;
+
+    getDocs(q)
+      .then((resp) => {
+        const items = resp.docs.map((doc) => ({
+          ...doc.data(),
           id: doc.id,
-          ...doc.data()
         }));
         setProductos(items);
       })
-      .finally(() => setLoading(false));
-  }, []);
+      .catch((error) => {
+        console.error("Error al obtener libros:", error);
+      });
+  }, [categoriaId]);
 
-  if (loading) return <p>Cargando productos...</p>;
-
-
-
-return (
-  <div>
-    <h2>Productos</h2>
-    <ItemList productos={productos} />
-  </div>
-);
-
-
+  return (
+    <div>
+      <h2>{categoriaId ? `Categoría: ${categoriaId}` : "Todos los libros"}</h2>
+      <ItemList productos={productos} />
+    </div>
+  );
 };
 
 export default ItemListContainer;

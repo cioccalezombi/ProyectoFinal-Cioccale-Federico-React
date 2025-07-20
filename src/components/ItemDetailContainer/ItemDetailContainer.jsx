@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
   useEffect(() => {
-    const docRef = doc(db, "productos", itemId);
+    const docRef = doc(db, "libros", itemId); // ✅ cambio acá
 
     getDoc(docRef).then((docSnap) => {
       if (docSnap.exists()) {

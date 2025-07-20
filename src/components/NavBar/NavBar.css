@@ -1,0 +1,41 @@
+.navbar-container {
+  background-color: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex: 1;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar-actions a {
+  text-decoration: none;
+  color: black;
+}

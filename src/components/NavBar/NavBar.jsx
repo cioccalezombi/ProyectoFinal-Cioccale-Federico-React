@@ -1,17 +1,27 @@
-import { Link } from 'react-router-dom';
-import CartWidget from '../CartWidget/CartWidget';
+import { Link } from "react-router-dom";
+import banner from "../../assets/banner.png";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <header>
-      <nav>
-        <Link to="/"><h1>Mi E-commerce</h1></Link>
-        <ul>
-          <li><Link to="/categoria/tecnologia">Tecnología</Link></li>
-          <li><Link to="/categoria/ropa">Ropa</Link></li>
-          <li><Link to="/carrito"><CartWidget /></Link></li>
-        </ul>
-      </nav>
+    <header className="navbar-container">
+      <div className="navbar-inner">
+        <div className="navbar-logo">
+          <img src={banner} alt="Black Library Shop" />
+        </div>
+
+        <nav className="navbar-links">
+          <Link to="/categoria/herejiaDeHorus">Herejía de Horus</Link>
+          <Link to="/categoria/warhammer40K">Warhammer 40K</Link>
+          <Link to="/categoria/ageOfSigmar">Age of Sigmar</Link>
+          <Link to="/categoria/personajesIconicos">Personajes Icónicos</Link>
+        </nav>
+
+        <div className="navbar-actions">
+          <Link to="/cart">🛒</Link>
+          <Link to="/ordenes">Órdenes</Link>
+        </div>
+      </div>
     </header>
   );
 };
