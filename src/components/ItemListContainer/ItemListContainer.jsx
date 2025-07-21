@@ -38,7 +38,7 @@ const ItemListContainer = () => {
 
   return (
     <div className="container py-4">
-<h2 className="titulo-categoria">
+<h2 className="titulo-categoria category-title ">
   {categoriaId ? `${nombresCategorias[categoriaId] || categoriaId}` : "Todos los libros"}
 </h2>
       <ItemList productos={productos} />
@@ -47,3 +47,4 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+

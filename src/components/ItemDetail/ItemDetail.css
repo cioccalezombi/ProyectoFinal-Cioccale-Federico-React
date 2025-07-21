@@ -1,0 +1,82 @@
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.detail-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.detail-img {
+  width: 280px; /* ✅ Aumentamos tamaño de miniatura */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.detail-info {
+  text-align: center;
+}
+
+.detail-description {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.detail-price,
+.detail-stock {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* ✅ Centramos cualquier botón dentro de detail-info */
+.detail-info button,
+.detail-info a {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .detail-card {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .detail-info {
+    max-width: 400px;
+  }
+
+  .detail-img {
+    width: 300px; /* ✅ Más grande también en escritorio */
+  }
+}
+
+.book-title {
+  font-family: "Ancient", serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 1rem 0;
+}

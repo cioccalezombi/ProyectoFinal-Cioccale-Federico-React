@@ -14,3 +14,18 @@
   text-align: center;
   margin-bottom: 2rem;
 }
+
+
+.category-title {
+  font-family: "Ancient", serif;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.book-title {
+  font-family: "Ancient", serif;
+  font-size: 8rem;
+  text-align: center;
+  margin: 1rem 0;
+}
