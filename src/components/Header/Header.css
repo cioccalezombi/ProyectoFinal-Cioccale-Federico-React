@@ -1,61 +1,72 @@
-/* Estilos base */
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 2px solid black;
-  background-color: white;
-}
-
-.header-logo img.logo-img {
-  height: 80px;
+.custom-logo {
+  max-height: 200px;
   object-fit: contain;
 }
 
-.header-nav {
-  display: flex;
-  gap: 20px;
-  font-weight: bold;
+@media (max-width: 768px) {
+  .custom-logo {
+    margin-bottom: 1.5rem; /* Ajustá este valor a gusto */
+  }
 }
 
-.header-nav a {
+
+@media (max-width: 768px) {
+  nav.d-flex.flex-column {
+    background-color: black;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.d-flex.flex-column a {
+    color: white !important;
+    background-color: transparent;
+    padding: 0.5rem;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav.d-flex.flex-column a + a {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  nav.d-flex.flex-md-row {
+    gap: 3rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-cart-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+.nav-link-hover {
   color: black;
   text-decoration: none;
-}
-
-.header-cart a {
-  color: black;
   font-weight: bold;
-  display: flex;
-  align-items: center;
+  transition: color 0.2s ease-in-out;
 }
 
-/* Estilos específicos para móviles */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-logo img.logo-img {
-    height: 140px;
-  }
-
-  .header-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-nav a {
-    color: black;
-    font-size: 1rem;
-  }
-
-  .header-cart {
-    align-self: flex-end;
-    margin-right: 10px;
-  }
+.nav-link-hover:hover {
+  color: #6c757d; /* gris */
 }
+
+
+
+
+
+.nav-link-hover:hover {
+  color: #6c757d; /* gris tipo Bootstrap (gray-600) */
+  transition: color 0.2s ease-in-out;
+}
+
+.custom-header {
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+}
+
+
