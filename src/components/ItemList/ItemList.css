@@ -1,0 +1,16 @@
+.book-thumbnail {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.book-card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.titulo-categoria {
+  text-align: center;
+  margin-bottom: 2rem;
+}

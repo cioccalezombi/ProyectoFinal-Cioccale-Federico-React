@@ -4,12 +4,20 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import ItemList from "../ItemList/ItemList";
 
+const nombresCategorias = {
+  herejiaDeHorus: "Herejía de Horus",
+  warhammer40K: "Warhammer 40K",
+  ageOfSigmar: "Age of Sigmar",
+  personajesIconicos: "Personajes Icónicos",
+};
+
+
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const { categoriaId } = useParams();
 
   useEffect(() => {
-    const librosRef = collection(db, "libros"); // Cambiado de "productos" a "libros"
+    const librosRef = collection(db, "libros");
 
     const q = categoriaId
       ? query(librosRef, where("category", "==", categoriaId))
@@ -29,8 +37,10 @@ const ItemListContainer = () => {
   }, [categoriaId]);
 
   return (
-    <div>
-      <h2>{categoriaId ? `Categoría: ${categoriaId}` : "Todos los libros"}</h2>
+    <div className="container py-4">
+<h2 className="titulo-categoria">
+  {categoriaId ? `${nombresCategorias[categoriaId] || categoriaId}` : "Todos los libros"}
+</h2>
       <ItemList productos={productos} />
     </div>
   );

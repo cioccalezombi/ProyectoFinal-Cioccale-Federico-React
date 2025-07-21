@@ -6,18 +6,30 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
+  const [error, setError] = useState(null);
   const { itemId } = useParams();
 
   useEffect(() => {
-    const docRef = doc(db, "libros", itemId); // ✅ cambio acá
+    const fetchItem = async () => {
+      try {
+        const docRef = doc(db, "libros", itemId);
+        const docSnap = await getDoc(docRef);
 
-    getDoc(docRef).then((docSnap) => {
-      if (docSnap.exists()) {
-        setItem({ id: docSnap.id, ...docSnap.data() });
+        if (docSnap.exists()) {
+          setItem({ id: docSnap.id, ...docSnap.data() });
+        } else {
+          setError("Libro no encontrado.");
+        }
+      } catch (err) {
+        setError("Error al cargar el libro.");
+        console.error(err);
       }
-    });
+    };
+
+    fetchItem();
   }, [itemId]);
 
+  if (error) return <p className="text-danger">{error}</p>;
   if (!item) return <p>Cargando detalle...</p>;
 
   return <ItemDetail item={item} />;
