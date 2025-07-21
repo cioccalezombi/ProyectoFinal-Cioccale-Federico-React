@@ -29,11 +29,11 @@ const ItemDetail = ({ item }) => {
         <img src={getImageById(item.id)} alt={item.title} className="detail-img " />
         <div className="detail-info">
           <p className="detail-description">{item.description}</p>
-          <p className="detail-price">💰 Precio: ${item.price}</p>
-          <p className="detail-stock">📦 Stock disponible: {item.stock}</p>
+          <p className="detail-price">Precio: ${item.price}</p>
+          <p className="detail-stock">Stock disponible: {item.stock}</p>
 
           {added ? (
-            <Link to="/cart"><button className="btn btn-success mt-2">Ir al carrito 🛒</button></Link>
+            <Link to="/cart" className="btn btn-dark mt-auto boton-carrito w-50">Ir al carrito 🛒</Link>
           ) : (
             <ItemCount stock={item.stock} onAdd={handleAdd} />
           )}

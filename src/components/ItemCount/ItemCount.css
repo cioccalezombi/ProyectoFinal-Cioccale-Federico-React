@@ -1,0 +1,13 @@
+.fixed-height {
+  height: 48px; /* asegura espacio para un solo botón */
+}
+
+.no-decoration {
+  text-decoration: none !important;
+  color: white;
+}
+
+.no-decoration:hover {
+  color: white;
+}
+

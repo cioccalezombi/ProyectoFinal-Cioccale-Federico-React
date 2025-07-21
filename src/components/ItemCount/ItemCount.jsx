@@ -28,16 +28,9 @@ useEffect(() => {
         <span style={{ fontSize: "18px", minWidth: "30px", textAlign: "center" }}>{quantity}</span>
         <button onClick={increment} style={{ padding: "5px 10px" }}>+</button>
       </div>
-      <button
+      <button class="btn btn-dark mt-auto w-50"
         onClick={handleAddToCart}
-        style={{
-          marginTop: "10px",
-          padding: "8px 16px",
-          backgroundColor: "#2ecc71",
-          color: "#fff",
-          border: "none",
-          cursor: "pointer",
-        }}
+        
       >
         Agregar al carrito
       </button>
