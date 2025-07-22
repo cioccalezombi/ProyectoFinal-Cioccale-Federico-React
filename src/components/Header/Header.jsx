@@ -1,8 +1,10 @@
+import CartWidget from "../CartWidget/CartWidget"; // arriba del todo
 import { Link } from "react-router-dom";
 import "./Header.css";
 import banner from "../../assets/banner.png";
 import banner1 from "../../assets/banner1.png";
 import { useEffect, useState } from "react";
+
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -40,11 +42,10 @@ const Header = () => {
         </nav>
 
         <div className="col-12 col-md-3 d-flex justify-content-end mt-2 mt-md-0">
-          <div className="header-cart-icons d-flex gap-3">
-            <Link to="/cart" className="nav-link-hover">🛒</Link>
-            <Link to="/ordenes" className="nav-link-hover">📄</Link>
-          </div>
-        </div>
+<div className="header-cart-icons d-flex gap-3">
+  <CartWidget />
+  <Link to="/ordenes" className="nav-link-hover">📄</Link>
+</div>        </div>
       </div>
     </header>
   );
