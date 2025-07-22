@@ -1,0 +1,42 @@
+.checkout-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.checkout-container h2 {
+  font-family: "Ancient", serif; /* o la fuente que estés usando */
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.checkout-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkout-form button.btn-dark {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.checkout-thanks h2 {
+  font-family: "Ancient", serif;
+  margin-top: 2rem;
+}
+
+.checkout-thanks p {
+  font-size: 1.2rem;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: #999;
+}

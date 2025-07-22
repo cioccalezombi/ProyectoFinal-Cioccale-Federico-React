@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../firebase/config";
-
 import {
   collection,
   addDoc,
@@ -50,7 +49,6 @@ const CheckoutForm = () => {
       const docRef = await addDoc(ordenesRef, orden);
       setOrderId(docRef.id);
 
-      // Descontar stock
       for (const item of cart) {
         const productoRef = doc(db, "libros", item.id);
         const productoSnap = await getDoc(productoRef);
@@ -58,7 +56,6 @@ const CheckoutForm = () => {
         if (productoSnap.exists()) {
           const productoData = productoSnap.data();
           const nuevoStock = productoData.stock - item.quantity;
-
           await updateDoc(productoRef, { stock: nuevoStock });
         }
       }
@@ -71,46 +68,83 @@ const CheckoutForm = () => {
 
   if (orderId) {
     return (
-      <div>
+      <div className="container text-center mt-5">
         <h2>¡Gracias por tu compra!</h2>
         <p>Tu número de orden es: <strong>{orderId}</strong></p>
-        <Link to="/">
-          <button style={{ marginTop: "1rem" }}>Volver al inicio</button>
+        <Link to="/" className="btn btn-dark mt-3">
+          Volver al inicio
         </Link>
       </div>
     );
   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <h2>Finalizar compra</h2>
+return (
+  <div className="container mt-5">
+    <h2 className="mb-4 text-center cart-heading">Finalizar compra</h2>
+
+    <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center gap-3">
+
       <input
         type="text"
         name="nombre"
         placeholder="Nombre"
+        className="form-control w-100"
+        style={{ maxWidth: '500px' }}
         value={values.nombre}
         onChange={handleChange}
         required
       />
+
       <input
         type="email"
         name="email"
         placeholder="Email"
+        className="form-control w-100"
+        style={{ maxWidth: '500px' }}
         value={values.email}
         onChange={handleChange}
         required
       />
+
       <input
         type="tel"
         name="telefono"
         placeholder="Teléfono"
+        className="form-control w-100"
+        style={{ maxWidth: '500px' }}
         value={values.telefono}
         onChange={handleChange}
         required
       />
-      <button type="submit">Comprar</button>
+
+      {/* Campos decorativos agregados */}
+      <input
+        type="text"
+        placeholder="Número de tarjeta"
+        className="form-control w-100"
+        style={{ maxWidth: '500px' }}
+      />
+
+      <input
+        type="text"
+        placeholder="Código de seguridad"
+        className="form-control w-100"
+        style={{ maxWidth: '500px' }}
+      />
+
+      <input
+        type="text"
+        placeholder="DNI"
+        className="form-control w-100"
+        style={{ maxWidth: '500px' }}
+      />
+
+      <button type="submit" className="btn btn-dark w-100" style={{ maxWidth: '500px' }}>
+        Comprar
+      </button>
+
     </form>
-  );
-};
+  </div>
+);};
 
 export default CheckoutForm;

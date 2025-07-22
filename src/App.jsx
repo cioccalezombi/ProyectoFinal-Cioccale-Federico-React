@@ -8,30 +8,29 @@ import Orders from "./components/Orders/Orders";
 import Footer from "./components/Footer/Footer";
 import './App.css';
 
-
-
 import { useEffect } from "react";
 import { db } from "./firebase/config";
 import { collection, doc, setDoc } from "firebase/firestore";
 
 function App() {
-
-
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
-        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<CheckoutForm />} />
-        <Route path="/carrito" element={<Cart />} />
-        <Route path="/ordenes" element={<Orders />} />
-      </Routes>
-      <Footer path="/Footer" element={<Footer />} 
- /> 
-    </>
+
+      <main className="flex-grow-1">
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckoutForm />} />
+          <Route path="/carrito" element={<Cart />} />
+          <Route path="/ordenes" element={<Orders />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
