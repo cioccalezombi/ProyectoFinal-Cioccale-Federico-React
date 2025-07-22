@@ -83,26 +83,11 @@ body {
 }
 
 
-.footer {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #111;
-  color: #eee;
-  text-align: center;
-  border-top: 3px solid #aa0000;
-}
 
-.footer {
-  margin-top: 50px;
-  padding: 30px 20px;
-  background-color: #111;
-  color: #eee;
-  text-align: center;
-  border-top: 3px solid #aa0000;
-}
+
+
 
 .footer-text {
-  margin-bottom: 15px;
   font-size: 1rem;
 }
 
@@ -122,4 +107,24 @@ body {
 
 .footer-links a:hover {
   color: #d4af37; /* dorado */
+}
+
+
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  border-top: 3px solid #d4af37;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* En pantallas pequeñas, el footer se comporta como un bloque normal */
+@media (max-width: 768px) {
+  .footer {
+    position: static;
+  }
 }

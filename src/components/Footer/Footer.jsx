@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer ">
       <p className="footer-text">
         © 2025 <strong>Black Library Shop</strong> — Todos los derechos reservados.
       </p>

@@ -14,7 +14,7 @@ import { collection, doc, setDoc } from "firebase/firestore";
 
 function App() {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-250">
       <Header />
 
       <main className="flex-grow-1">
