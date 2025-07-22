@@ -29,3 +29,21 @@
   text-align: center;
   margin: 1rem 0;
 }
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  color: #eee;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-icons a:hover {
+  color: #d4af37; /* dorado imperial */
+  transform: scale(1.2);
+}

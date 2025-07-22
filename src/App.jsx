@@ -5,6 +5,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart";
 import CheckoutForm from "./components/CheckoutForm/CheckoutForm";
 import Orders from "./components/Orders/Orders";
+import Footer from "./components/Footer/Footer";
+import './App.css';
+
+
 
 import { useEffect } from "react";
 import { db } from "./firebase/config";
@@ -25,6 +29,8 @@ function App() {
         <Route path="/carrito" element={<Cart />} />
         <Route path="/ordenes" element={<Orders />} />
       </Routes>
+      <Footer path="/Footer" element={<Footer />} 
+ /> 
     </>
   );
 }

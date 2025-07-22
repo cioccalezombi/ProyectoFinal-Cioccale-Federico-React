@@ -33,7 +33,7 @@ const ItemDetail = ({ item }) => {
           <p className="detail-stock">Stock disponible: {item.stock}</p>
 
           {added ? (
-            <Link to="/cart" className="btn btn-dark mt-auto boton-carrito w-50">Ir al carrito 🛒</Link>
+            <Link to="/cart" className="btn btn-dark mt-auto boton-carrito w-100">Ir al carrito 🛒</Link>
           ) : (
             <ItemCount stock={item.stock} onAdd={handleAdd} />
           )}
