@@ -62,7 +62,7 @@ const CheckoutForm = () => {
 
       clearCart();
     } catch (error) {
-      console.error("❌ Error al generar la orden o actualizar stock:", error);
+      console.error("Error al generar la orden o actualizar stock:", error);
     }
   };
 

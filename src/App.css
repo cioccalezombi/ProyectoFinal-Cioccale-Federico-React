@@ -122,6 +122,10 @@ body {
   width: 100%;
 }
 
+main {
+  padding-bottom: 100px;
+}
+
 /* En pantallas pequeñas, el footer se comporta como un bloque normal */
 @media (max-width: 768px) {
   .footer {
